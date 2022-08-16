@@ -39,21 +39,22 @@ return maior;
 }
 //----------------------
 int menorVet(int v[],int n){
-	int i, maior = v[0];
+	int i, menor = v[0];
 	for(i=1;i<n;i++){
-	if(v[i]<maior){
-		maior=v[i];
-	}
-}
-return maior;
-}
-//----------------------
-int menorVet(int v[],int n){
-	int i, maior = v[0];
-	for(i=1;i<n;i++){
-	if(v[i]<maior){
-		maior=v[i];
+	if(v[i]<menor){
+		menor=v[i];
 	}
 }
 return menor;
 }
+//----------------------
+int existe(int x, int v[], int n){
+	int cont=0,i;
+	for(i=0;i<n;i++){
+		if(v[i]==x){
+			cont++;
+		}
+	}
+	return cont;	
+}
+//----------------------
