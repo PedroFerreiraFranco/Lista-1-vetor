@@ -58,3 +58,11 @@ int existe(int x, int v[], int n){
 	return cont;	
 }
 //----------------------
+void somaVet(int n, float num){
+	int i;
+	float soma=0;
+	for(i=0;i<n;i++){
+		soma = soma +num;
+	}
+	return soma;
+}
