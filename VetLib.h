@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
-void geraVet(int v[], int n){
+void geraVetor(int v[], int n, int m){
 	int i;
-	srand(time(NULL)); // inicializa gerador
-	for(i=0;i<n;i++)
-		v[i]=rand()%20; 
-}
+	srand(time(NULL));
+	for(i = 0; i < n; i++){
+		v[i] = rand()%m + 1;
+	}
 //--------------------
 void leiaVetor(int v[],int n){
 	int i;
@@ -20,14 +21,7 @@ void printVet(int v[], int n){
 		printf("%d |",v[i]);
 	printf("\n");	
 }
-//----------------------
-int somaVet(int v[], int n){
-	int i,soma=0;
-	for(i=0;i<n;i++)
-		soma+=v[i];
-	return soma;	
-}
-//----------------------
+//--------------------
 int maiorVet(int v[],int n){
 	int i, maior = v[0];
 	for(i=1;i<n;i++){
@@ -58,11 +52,24 @@ int existe(int x, int v[], int n){
 	return cont;	
 }
 //----------------------
-void somaVet(int n, float num){
-	int i;
-	float soma=0;
-	for(i=0;i<n;i++){
-		soma = soma +num;
+int somaVet(int v[], int n){
+	int i, soma = 0;
+
+	
+	for(i = 0; i < n; i++){
+		soma += v[i];
 	}
+	
 	return soma;
+}
+//----------------------
+int advinha(int v[], int n, int x){
+	int certo = 0,i;
+	for(i = 0; i < n; i++){
+		if(x == v[i]){
+			certo = 1;
+			return certo;
+		}
+	}
+	return certo;
 }
