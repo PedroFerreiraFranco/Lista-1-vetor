@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-void geraVetor(int v[], int n, int m){
+void geraVet(int v[], int n){
 	int i;
-	srand(time(NULL));
-	for(i = 0; i < n; i++){
-		v[i] = rand()%m + 1;
-	}
+	srand(time(NULL)); // inicializa gerador
+	for(i=0;i<n;i++)
+		v[i]=rand()%20; 
+}
 //--------------------
 void leiaVetor(int v[],int n){
 	int i;
